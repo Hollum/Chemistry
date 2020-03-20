@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b29eab50-b08c-40c4-a855-be6b759a4c95" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Atom.java" afterDir="false" />
+    <list default="true" id="b29eab50-b08c-40c4-a855-be6b759a4c95" name="Default Changelist" comment="read from file">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Chemistry/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chemistry/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Chemistry/numericDensities" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chemistry/numericDensities" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NumericDensities" beforeDir="false" afterPath="$PROJECT_DIR$/src/numericDensities" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/numericDensities" beforeDir="false" afterPath="$PROJECT_DIR$/src/numericDensities" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,12 +78,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1584700641694</updated>
-      <workItem from="1584700644023" duration="6066000" />
+      <workItem from="1584700644023" duration="10439000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="read from file" />
+    <option name="LAST_COMMIT_MESSAGE" value="read from file" />
   </component>
   <component name="WindowStateProjectService">
     <state x="574" y="293" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1584701201113">
@@ -100,25 +103,25 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="423" y="127" key="CommitChangelistDialog2/0.0.1680.1050@0.0.1680.1050" timestamp="1584709022722" />
-    <state width="1638" height="240" key="GridCell.Tab.0.bottom" timestamp="1584708922349">
+    <state width="1638" height="240" key="GridCell.Tab.0.bottom" timestamp="1584713352540">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="240" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1584708922349" />
+    <state width="1638" height="240" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1584713352540" />
     <state width="1358" height="240" key="GridCell.Tab.0.bottom/0.23.1680.925@0.23.1680.925" timestamp="1584704725358" />
-    <state width="1638" height="240" key="GridCell.Tab.0.center" timestamp="1584708922348">
+    <state width="1638" height="240" key="GridCell.Tab.0.center" timestamp="1584713352535">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="240" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1584708922348" />
+    <state width="1638" height="240" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1584713352535" />
     <state width="1358" height="240" key="GridCell.Tab.0.center/0.23.1680.925@0.23.1680.925" timestamp="1584704725357" />
-    <state width="1638" height="240" key="GridCell.Tab.0.left" timestamp="1584708922347">
+    <state width="1638" height="240" key="GridCell.Tab.0.left" timestamp="1584713352535">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="240" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1584708922347" />
+    <state width="1638" height="240" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1584713352535" />
     <state width="1358" height="240" key="GridCell.Tab.0.left/0.23.1680.925@0.23.1680.925" timestamp="1584704725356" />
-    <state width="1638" height="240" key="GridCell.Tab.0.right" timestamp="1584708922348">
+    <state width="1638" height="240" key="GridCell.Tab.0.right" timestamp="1584713352538">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="240" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1584708922348" />
+    <state width="1638" height="240" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1584713352538" />
     <state width="1358" height="240" key="GridCell.Tab.0.right/0.23.1680.925@0.23.1680.925" timestamp="1584704725357" />
     <state x="517" y="316" key="com.intellij.ide.util.TipDialog" timestamp="1584700647253">
       <screen x="0" y="23" width="1680" height="925" />
