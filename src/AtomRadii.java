@@ -2,8 +2,8 @@ public class AtomRadii {
     private double atomicNumber;
     private String symbol;
     private String name;
-    private double empirical;
-    private double calculated;
+    private double empirical; //radius
+    private double calculated; //radius
     private double vanDeraWals;
     private double singleond; //Covalent
     private double tripleond; //Covalent
@@ -24,8 +24,76 @@ public class AtomRadii {
         this.metallic = metallic;
     }
 
-    public AtomRadii() {
+    public double getAtomicNumber() {
+        return atomicNumber;
+    }
 
+    public void setAtomicNumber(double atomicNumber) {
+        this.atomicNumber = atomicNumber;
+    }
+
+    public String getSymbol() {
+        return symbol;
+    }
+
+    public void setSymbol(String symbol) {
+        this.symbol = symbol;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public double getEmpirical() {
+        return empirical;
+    }
+
+    public void setEmpirical(double empirical) {
+        this.empirical = empirical;
+    }
+
+    public double getCalculated() {
+        return calculated;
+    }
+
+    public void setCalculated(double calculated) {
+        this.calculated = calculated;
+    }
+
+    public double getVanDeraWals() {
+        return vanDeraWals;
+    }
+
+    public void setVanDeraWals(double vanDeraWals) {
+        this.vanDeraWals = vanDeraWals;
+    }
+
+    public double getSingleond() {
+        return singleond;
+    }
+
+    public void setSingleond(double singleond) {
+        this.singleond = singleond;
+    }
+
+    public double getTripleond() {
+        return tripleond;
+    }
+
+    public void setTripleond(double tripleond) {
+        this.tripleond = tripleond;
+    }
+
+    public double getMetallic() {
+        return metallic;
+    }
+
+    public void setMetallic(double metallic) {
+        this.metallic = metallic;
     }
 
     @Override
