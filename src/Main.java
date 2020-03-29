@@ -1,16 +1,12 @@
 import java.io.*;
 import java.util.HashMap;
-import java.util.Scanner;
 
 public class Main {
 
-    public static void test(){
-
-    }
-
-    public static void main(String[] args) {
-        HashMap<String, Atom> atoms = new HashMap<String, Atom>();
+    public static HashMap getAtoms(){
+        HashMap<String, Atom> atoms = null;
         try {
+            atoms = new HashMap<>();
             File file = new File("src/numericDensities");
             FileReader in = new FileReader(file);
             BufferedReader br = new BufferedReader(in);
@@ -26,32 +22,67 @@ public class Main {
                 out = line.split(",");
 
 
-                if(out[2].equals("Unknown") && out[3].equals("Unknown") && out[4].equals("Unknown")){
-                    atom = new Atom(out[0], out[1], -1,
-                            -1, -1,
-                            out[5], out[6], out[7]);
-                    atoms.put(out[0], atom);
-                } else if(out[2].equals("Unknown") && out[3].equals("Unknown")){
-                    atom = new Atom(out[0], out[1], -1,
-                            -1, Double.parseDouble(out[4]),
-                            out[5], out[6], out[7]);
-                    atoms.put(out[0], atom);
-                } else {
-                    atom = new Atom(out[0], out[1], Double.parseDouble(out[2]),
-                            Double.parseDouble(out[3]), Double.parseDouble(out[4]),
-                            out[5], out[6], out[7]);
-                    atoms.put(out[0], atom);
-                }
+                atom = new Atom(out[0], out[1], Double.parseDouble(out[2]),
+                        Double.parseDouble(out[3]), Double.parseDouble(out[4]),
+                        out[5], out[6], out[7]);
+                atoms.put(out[0], atom);
 
             }
 
             in.close();
             br.close();
+
         }catch (Exception e){
             e.printStackTrace();
         }
 
         System.out.println(atoms);
+        return atoms;
+    }
+
+    public static HashMap getAtomRadii(){
+        HashMap<String, AtomRadii> atoms = null;
+        try {
+            atoms = new HashMap<>();
+            File file = new File("src/atomicRadii");
+            FileReader in = new FileReader(file);
+            BufferedReader br = new BufferedReader(in);
+
+
+
+            String line;
+            String[] out;
+
+            while ((line = br.readLine()) != null) {
+
+                AtomRadii atom;
+                out = line.split(",");
+
+
+
+                atom = new AtomRadii(Double.parseDouble(out[0]), out[1], out[2],
+                        Double.parseDouble(out[3]), Double.parseDouble(out[4]),
+                        Double.parseDouble(out[5]), Double.parseDouble(out[6]),
+                        Double.parseDouble(out[7]), Double.parseDouble(out[8]));
+                atoms.put(out[2], atom);
+
+            }
+
+            in.close();
+            br.close();
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        System.out.println(atoms);
+        return atoms;
+    }
+
+
+    public static void main(String[] args) {
+        getAtoms();
+        getAtomRadii();
     }
 
 }

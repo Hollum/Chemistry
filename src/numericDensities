@@ -112,7 +112,7 @@ Meitnerium,Mt,35,78.647,109,no data,no data,no data
 Bohrium,Bh,37,84.401,107,no data,no data,no data
 Dubnium,Db,39,89.643,105,no data,no data,no data
 Hassium,Hs,41,89.136,108,no data,no data,no data
-Fermium,Fm,Unknown,Unknown,100,no data,no data,no data
-Mendelevium,Md,Unknown,Unknown,101,no data,no data,no data
-Nobelium,No,Unknown,Unknown,102,no data,no data,no data
-Oganesson,Og,Unknown,Unknown,118,no data,no data, no data
+Fermium,Fm,-1,-1,100,no data,no data,no data
+Mendelevium,Md,-1,-1,101,no data,no data,no data
+Nobelium,No,-1,-1,102,no data,no data,no data
+Oganesson,Og,-1,-1,118,no data,no data, no data
