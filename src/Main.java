@@ -77,14 +77,15 @@ public class Main {
         return atoms;
     }
 
-    public static double calculateDensity(double mass, double radius){
-        double volume = -1;
+    public static double calculateDensity(double mass, double radius){ //radius is 10^-12
+        double density = -1;
         if(mass == -1 || radius == -1){
-            return volume;
+            return density;
         } else {
-            volume = (mass * 3) / (4 * Math.PI * Math.pow(radius, 3));
+            double u = 1.66053906660 * Math.pow(10,-24.0); //
+            density = (mass * u * 3) / (4 * Math.PI * Math.pow(radius * (Math.pow(10,-12)), 3));
         }
-        return volume;
+        return density;
     }
 
     public static void main(String[] args) {
@@ -131,17 +132,23 @@ public class Main {
         }
      */
 
-        double AVOGADROS = 1.66053906660 * Math.pow(10,24.0); //1 mol
 
-        //atoms and atomRadii contains the same length because of same periodic table
-        for(int i = 0; i < atoms.size(); i++){
+
+    /*
+        //Get all weights based on empirical radius
+        for(int i = 0; i < atoms.size(); i++){ //atoms and atomRadii contains the same length because of same periodic table
             System.out.println(
                     atoms.get(i).getName() + ": " + calculateDensity(atoms.get(i).getWeight(), atomRadii.get(i).getEmpirical())
             );
         }
+     */
 
-        //Calculate
-
+        //Get all weights based on calculated radius
+        for(int i = 0; i < atoms.size(); i++){ //atoms and atomRadii contains the same length because of same periodic table
+            System.out.println(
+                    atoms.get(i).getName() + ": " + calculateDensity(atoms.get(i).getWeight(), atomRadii.get(i).getCalculated())
+            );
+        }
 
     }
 
