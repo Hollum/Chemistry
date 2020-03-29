@@ -10,7 +10,7 @@
 10,Neon,Ne,20.18
 11,Sodium,Na,22.99
 12,Magnesium,Mg,24.305
-13,Aluminum,Al,26.982
+13,Aluminium,Al,26.982
 14,Silicon,Si,28.086
 15,Phosphorus,P,30.974
 16,Sulfur,S,32.065
@@ -52,7 +52,7 @@
 52,Tellurium,Te,127.6
 53,Iodine,I,126.904
 54,Xenon,Xe,131.293
-55,Cesium,Cs,132.905
+55,Caesium,Cs,132.905
 56,Barium,Ba,137.327
 57,Lanthanum,La,138.905
 58,Cerium,Ce,140.116
@@ -71,7 +71,7 @@
 71,Lutetium,Lu,174.967
 72,Hafnium,Hf,178.49
 73,Tantalum,Ta,180.948
-74,Wolfram,W,183.84
+74,Tungsten,W,183.84
 75,Rhenium,Re,186.207
 76,Osmium,Os,190.23
 77,Iridium,Ir,192.217
@@ -109,10 +109,9 @@
 109,Meitnerium,Mt,268
 110,Darmstadtium,Ds,271
 111,Roentgenium,Rg,272
-112,Copernicium,Cn,285
-113,Nihonium,Nh,284
-114,Flerovium,Fl,289
-115,Moscovium,Mc,288
-116,Livermorium,Lv,292
-117,Tennessine,Ts,295
+112,Ununbium,Uub,285
+113,Ununtrium,Uut,284
+114,Ununquadium,Uuq,289
+115,Ununpentium,Uup,288
+116,Ununhexium,Uuh,292
 118,Oganesson,Og,294

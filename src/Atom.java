@@ -106,6 +106,7 @@ public class Atom {
                 ", description='" + description + '\'' +
                 ", color='" + color + '\'' +
                 ", notes='" + notes + '\'' +
+                ", weight=" + weight +
                 '}';
     }
 }
