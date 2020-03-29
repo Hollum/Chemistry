@@ -24,7 +24,7 @@ public class Main {
                 out = line.split(",");
 
 
-                atom = new Atom(out[0], out[1], Double.parseDouble(out[2]),
+                atom = new Atom(out[0].toLowerCase(), out[1], Double.parseDouble(out[2]),
                         Double.parseDouble(out[3]), Double.parseDouble(out[4]),
                         out[5], out[6], out[7]);
                 atoms.put(atom.getName(),atom);
@@ -80,7 +80,7 @@ public class Main {
 
     //TODO: Wrong rekkefølge
     public static double calculateDensity(double weight, double radius){
-        //System.out.println("Weight: " + weight + " radius: " + radius);
+        System.out.println("Weight: " + weight + " radius: " + radius);
         double density = -1;
         radius = radius * Math.pow(10,-10);
         double u = 1.66053906660 * Math.pow(10,-24.0); //atom weight in gram
@@ -112,10 +112,9 @@ public class Main {
 
             while ((line = br.readLine()) != null) {
 
-                AtomRadii atom;
                 out = line.split(",");
 
-                atoms.get(out[1]).setWeight(Double.parseDouble(out[3]));
+                atoms.get(out[1].toLowerCase()).setWeight(Double.parseDouble(out[3]));
             }
 
             in.close();
@@ -124,6 +123,18 @@ public class Main {
         }catch (Exception e){
             e.printStackTrace();
         }
+
+
+        /*
+                for (Map.Entry me : atoms.entrySet()) {
+            System.out.println("Key: "+me.getKey() + " & Value: " + me.getValue().toString());
+        }
+         */
+
+        atoms.forEach((key, value) -> System.out.println(value.getName() + " " + value.getWeight()));
+
+
+        //atoms.forEach((key, value) -> System.out.println(calculateDensity(value.getWeight(), atomRadii.get("hydrogen").getCalculated())));
 
 
    /*
@@ -146,9 +157,7 @@ public class Main {
      */
 
 
-        for (Map.Entry me : atoms.entrySet()) {
-            System.out.println("Key: "+me.getKey() + " & Value: " + me.getValue().toString());
-        }
+
 
 
     /*

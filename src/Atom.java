@@ -9,6 +9,8 @@ public class Atom {
     private String notes;
 
     private double weight;
+    private double empirical;
+    private double calculated;
 
     //Name,Symbol,Density (g/cm³),number of atoms per volume unit (Zetta-atoms/cm³),Atomic number,Description/Mohs' hardness,Color,Notes
 
@@ -25,6 +27,14 @@ public class Atom {
 
     public String getName() {
         return name;
+    }
+
+    public void setEmpirical(double empirical) {
+        this.empirical = empirical;
+    }
+
+    public void setCalculated(double calculated) {
+        this.calculated = calculated;
     }
 
     public void setName(String name) {
@@ -107,6 +117,8 @@ public class Atom {
                 ", color='" + color + '\'' +
                 ", notes='" + notes + '\'' +
                 ", weight=" + weight +
+                ", empirical=" + empirical +
+                ", calculated=" + calculated +
                 '}';
     }
 }
