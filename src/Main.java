@@ -79,9 +79,8 @@ public class Main {
         return atoms;
     }
 
-    //TODO: Wrong rekkefølge
     public static double calculateDensity(double weight, double radius){
-        System.out.println("Weight: " + weight + " radius: " + radius);
+        //System.out.println("Weight: " + weight + " radius: " + radius);
         double density = -1;
         double u = 1.66053906660 * Math.pow(10,-24.0); //atom weight in gram
 
@@ -125,36 +124,71 @@ public class Main {
             e.printStackTrace();
         }
 
+/*
 
-        /*
-                for (Map.Entry me : atoms.entrySet()) {
-            System.out.println("Key: "+me.getKey() + " & Value: " + me.getValue().toString());
-        }
-         */
-
-    /*
-        Iterator hmIterator = atoms.entrySet().iterator();
-
-        while (hmIterator.hasNext()) {
-            Map.Entry mapElement = (Map.Entry)hmIterator.next();
-            System.out.println(mapElement.getKey() + " : " + mapElement.getValue());
-        }
-     */
-
-        //atoms.forEach((key, value) -> System.out.println(value.getName() + " " + value.getWeight()));
-
-
+        System.out.println("--- Empirical Radius ----" );
+        System.out.println("Atom  " + "  Density" );
         atoms.forEach((key, value) -> {
-            //System.out.println(value.getName() + " " + value.getWeight());
+            double density;
             if(atomRadii.get(value.getName()) != null){
-                System.out.println(value.getName() + " " + calculateDensity(value.getWeight(), atomRadii.get(value.getName()).getCalculated()));
+                density = calculateDensity(value.getWeight(), atomRadii.get(value.getName()).getEmpirical());
+                if(density != -1){
+                    System.out.println(value.getName() + " " + density);
+                } else {
+                    System.out.println(value.getName() + " Unknown" );
+                }
             }
         });
 
+        System.out.println("--- Calculated Radius ----" );
+        System.out.println("Atom  " + "  Density" );
+        atoms.forEach((key, value) -> {
+            double density;
+            if(atomRadii.get(value.getName()) != null){
+                density = calculateDensity(value.getWeight(), atomRadii.get(value.getName()).getCalculated());
+                if(density != -1){
+                    System.out.println(value.getName() + " " + density);
+                } else {
+                    System.out.println(value.getName() + " Unknown" );
+                }
+            }
+        });
+ */
 
-        //atoms.forEach((key, value) -> System.out.println(calculateDensity(value.getWeight(), atomRadii.get(key).getCalculated())));
 
 
+        double avogadros = 6.022 * Math.pow(10, 23); //Avogadros number
+        System.out.println("--- Calculated Radius ----" );
+        System.out.println("Atom  " + "  Density" );
+        atoms.forEach((key, value) -> {
+            double density;
+            if(atomRadii.get(value.getName()) != null){
+                density = calculateDensity(value.getWeight(), atomRadii.get(value.getName()).getCalculated());
+                if(density != -1){
+                    System.out.println(
+                            value.getName() + " " + (density / value.getWeight()) * avogadros
+                    );
+                } else {
+                    System.out.println(value.getName() + " Unknown" );
+                }
+            }
+        });
+
+    /*
+
+
+        // double avogadros = 6.022 * Math.pow(10, 23); //Avogadros number
+        for(int i = 0; i < atoms.size(); i++){ //atoms and atomRadii contains the same length because of same periodic table
+            System.out.println(
+                    calculateDensity(atoms.get(i).getWeight(), atomRadii.get(i).getCalculated()) / (atoms.get(i).getWeight()) * avogadros
+            );
+        }
+     */
+
+
+    }
+
+}
    /*
     //Get all weights based on empirical radius
         for(int i = 0; i < atoms.size(); i++){ //atoms and atomRadii contains the same length because of same periodic table
@@ -173,23 +207,3 @@ public class Main {
             );
         }
      */
-
-
-
-
-
-    /*
-        double avogadros = 6.022 * Math.pow(10, 23); //Avogadros number
-
-        //
-        for(int i = 0; i < atoms.size(); i++){ //atoms and atomRadii contains the same length because of same periodic table
-            System.out.println(
-                    calculateDensity(atoms.get(i).getWeight(), atomRadii.get(i).getCalculated()) / (atoms.get(i).getWeight()) * avogadros
-            );
-        }
-     */
-
-
-    }
-
-}
