@@ -77,7 +77,6 @@ public class Main {
     }
 
     public static double calculateDensity(double weight, double radius){
-        //System.out.println("Weight: " + weight + " radius: " + radius);
         double density = -1;
         double u = 1.66053906660 * Math.pow(10,-24.0); //atom weight in gram
 
@@ -119,20 +118,6 @@ public class Main {
             e.printStackTrace();
         }
 
-        System.out.println("\n--- Empirical Radius ----" );
-        System.out.println("Atom  " + "  Density" );
-        atoms.forEach((key, value) -> {
-            double density;
-            if(atomRadii.get(value.getName()) != null){
-                density = calculateDensity(value.getWeight(), atomRadii.get(value.getName()).getEmpirical());
-                if(density != -1){
-                    System.out.println(value.getName() + " " + density);
-                } else {
-                    System.out.println(value.getName() + " Unknown" );
-                }
-            }
-        });
-
         System.out.println("\n--- Calculated Radius ----" );
         System.out.println("Atom  " + "  Density" );
         atoms.forEach((key, value) -> {
@@ -140,7 +125,22 @@ public class Main {
             if(atomRadii.get(value.getName()) != null){
                 density = calculateDensity(value.getWeight(), atomRadii.get(value.getName()).getCalculated());
                 if(density != -1){
-                    System.out.println(value.getName() + " " + density);
+                    System.out.println(value.getName() + " " + density + " g/cm^3");
+                } else {
+                    System.out.println(value.getName() + " Unknown" );
+                }
+            }
+        });
+
+
+        System.out.println("\n--- Empirical Radius ----" );
+        System.out.println("Atom  " + "  Density" );
+        atoms.forEach((key, value) -> {
+            double density;
+            if(atomRadii.get(value.getName()) != null){
+                density = calculateDensity(value.getWeight(), atomRadii.get(value.getName()).getEmpirical());
+                if(density != -1){
+                    System.out.println(value.getName() + " " + density + " g/cm^3");
                 } else {
                     System.out.println(value.getName() + " Unknown" );
                 }

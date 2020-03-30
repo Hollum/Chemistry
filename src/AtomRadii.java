@@ -10,8 +10,6 @@ public class AtomRadii {
     private double metallic;
 
     //atomic number,symbol,name,empirical †,Calculated,van der Waals,Covalent (singleond),Covalent (tripleond),Metallic
-
-
     public AtomRadii(double atomicNumber, String symbol, String name, double empirical, double calculated, double vanDeraWals, double singleond, double tripleond, double metallic) {
         this.atomicNumber = atomicNumber;
         this.symbol = symbol;

@@ -13,7 +13,6 @@ public class Atom {
     private double calculated;
 
     //Name,Symbol,Density (g/cm³),number of atoms per volume unit (Zetta-atoms/cm³),Atomic number,Description/Mohs' hardness,Color,Notes
-
     public Atom(String name, String symbol, double density, double numberOfAtoms, double atomicNumber, String description, String color, String notes){
         this.name = name;
         this.symbol = symbol;
