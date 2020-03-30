@@ -119,7 +119,7 @@ public class Main {
             e.printStackTrace();
         }
 
-        System.out.println("--- Empirical Radius ----" );
+        System.out.println("\n--- Empirical Radius ----" );
         System.out.println("Atom  " + "  Density" );
         atoms.forEach((key, value) -> {
             double density;
@@ -133,7 +133,7 @@ public class Main {
             }
         });
 
-        System.out.println("--- Calculated Radius ----" );
+        System.out.println("\n--- Calculated Radius ----" );
         System.out.println("Atom  " + "  Density" );
         atoms.forEach((key, value) -> {
             double density;
@@ -149,19 +149,26 @@ public class Main {
 
 
         double avogadros = 6.022 * Math.pow(10, 23); //Avogadros number
-        System.out.println("Atom  " + "  Density" );
+        System.out.println("\nTask 2 with calculated density" );
         atoms.forEach((key, value) -> {
             double density;
             if(atomRadii.get(value.getName()) != null){
                 density = calculateDensity(value.getWeight(), atomRadii.get(value.getName()).getCalculated());
                 if(density != -1){
                     System.out.println(
-                            value.getName() + " " + (density / value.getWeight()) * avogadros
+                            value.getName() + " " + ((density / value.getWeight()) * avogadros) * Math.pow(10, -21) + " Zetta-atoms/cm^3"
                     );
                 } else {
                     System.out.println(value.getName() + " Unknown" );
                 }
             }
+        });
+
+        System.out.println("\nTask 2 with density from table" );
+        atoms.forEach((key, value) -> {
+            System.out.println(
+                    value.getName() + " " + ((value.getDensity() / value.getWeight()) * avogadros) * Math.pow(10, -21) + " Zetta-atoms/cm^3"
+            );
         });
     }
 }
