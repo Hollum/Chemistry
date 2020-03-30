@@ -1,8 +1,5 @@
 import java.io.*;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
 
 public class Main {
 
@@ -87,15 +84,13 @@ public class Main {
         if(weight == -1 || radius == -1){
             return density;
         } else {
-            radius = radius * Math.pow(10,-10);
-            density = ((weight * u) * 3) / (4 * Math.PI * Math.pow(radius, 3)); //We change radius into cm
+            radius = radius * Math.pow(10,-10); //Radius is given in pm (picometers), change radius to cm
+            density = ((weight * u) * 3) / (4 * Math.PI * Math.pow(radius, 3));
         }
         return density;
     }
 
     public static void main(String[] args) {
-        //getAtoms();
-        //getAtomRadii();
 
         HashMap<String, Atom> atoms = getAtoms();
         HashMap<String, AtomRadii> atomRadii = getAtomRadii();
@@ -124,8 +119,6 @@ public class Main {
             e.printStackTrace();
         }
 
-/*
-
         System.out.println("--- Empirical Radius ----" );
         System.out.println("Atom  " + "  Density" );
         atoms.forEach((key, value) -> {
@@ -153,12 +146,9 @@ public class Main {
                 }
             }
         });
- */
-
 
 
         double avogadros = 6.022 * Math.pow(10, 23); //Avogadros number
-        System.out.println("--- Calculated Radius ----" );
         System.out.println("Atom  " + "  Density" );
         atoms.forEach((key, value) -> {
             double density;
@@ -173,37 +163,5 @@ public class Main {
                 }
             }
         });
-
-    /*
-
-
-        // double avogadros = 6.022 * Math.pow(10, 23); //Avogadros number
-        for(int i = 0; i < atoms.size(); i++){ //atoms and atomRadii contains the same length because of same periodic table
-            System.out.println(
-                    calculateDensity(atoms.get(i).getWeight(), atomRadii.get(i).getCalculated()) / (atoms.get(i).getWeight()) * avogadros
-            );
-        }
-     */
-
-
     }
-
 }
-   /*
-    //Get all weights based on empirical radius
-        for(int i = 0; i < atoms.size(); i++){ //atoms and atomRadii contains the same length because of same periodic table
-            System.out.println(
-                    atoms.get(i).getName() + ": " + calculateDensity(atoms.get(i).getWeight(), atomRadii.get(i).getEmpirical())
-            );
-        }
-    */
-
-
-    /*
-          //Get all weights based on calculated radius
-        for(int i = 0; i < atoms.size(); i++){ //atoms and atomRadii contains the same length because of same periodic table
-            System.out.println(
-                    atoms.get(i).getName() + ": " + calculateDensity(atoms.get(i).getWeight(), atomRadii.get(i).getCalculated())
-            );
-        }
-     */
