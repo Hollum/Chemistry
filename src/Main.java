@@ -1,6 +1,7 @@
 import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 public class Main {
@@ -24,7 +25,7 @@ public class Main {
                 out = line.split(",");
 
 
-                atom = new Atom(out[0].toLowerCase(), out[1], Double.parseDouble(out[2]),
+                atom = new Atom(out[0].toLowerCase().trim(), out[1], Double.parseDouble(out[2]),
                         Double.parseDouble(out[3]), Double.parseDouble(out[4]),
                         out[5], out[6], out[7]);
                 atoms.put(atom.getName(),atom);
@@ -82,12 +83,12 @@ public class Main {
     public static double calculateDensity(double weight, double radius){
         System.out.println("Weight: " + weight + " radius: " + radius);
         double density = -1;
-        radius = radius * Math.pow(10,-10);
         double u = 1.66053906660 * Math.pow(10,-24.0); //atom weight in gram
 
         if(weight == -1 || radius == -1){
             return density;
         } else {
+            radius = radius * Math.pow(10,-10);
             density = ((weight * u) * 3) / (4 * Math.PI * Math.pow(radius, 3)); //We change radius into cm
         }
         return density;
@@ -114,7 +115,7 @@ public class Main {
 
                 out = line.split(",");
 
-                atoms.get(out[1].toLowerCase()).setWeight(Double.parseDouble(out[3]));
+                atoms.get(out[1].toLowerCase().trim()).setWeight(Double.parseDouble(out[3]));
             }
 
             in.close();
@@ -131,10 +132,27 @@ public class Main {
         }
          */
 
-        atoms.forEach((key, value) -> System.out.println(value.getName() + " " + value.getWeight()));
+    /*
+        Iterator hmIterator = atoms.entrySet().iterator();
+
+        while (hmIterator.hasNext()) {
+            Map.Entry mapElement = (Map.Entry)hmIterator.next();
+            System.out.println(mapElement.getKey() + " : " + mapElement.getValue());
+        }
+     */
+
+        //atoms.forEach((key, value) -> System.out.println(value.getName() + " " + value.getWeight()));
 
 
-        //atoms.forEach((key, value) -> System.out.println(calculateDensity(value.getWeight(), atomRadii.get("hydrogen").getCalculated())));
+        atoms.forEach((key, value) -> {
+            //System.out.println(value.getName() + " " + value.getWeight());
+            if(atomRadii.get(value.getName()) != null){
+                System.out.println(value.getName() + " " + calculateDensity(value.getWeight(), atomRadii.get(value.getName()).getCalculated()));
+            }
+        });
+
+
+        //atoms.forEach((key, value) -> System.out.println(calculateDensity(value.getWeight(), atomRadii.get(key).getCalculated())));
 
 
    /*
